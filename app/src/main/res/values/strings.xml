@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">HaVagas</string>
+    <string name="h_vagas">Há vagas</string>
+    <string name="nome_completo">Nome Completo</string>
+    <string name="email">Email</string>
+    <string name="recebe_email">Deseja receber emails sobre atualizações e promoções</string>
+    <string name="telefone">Telefone</string>
+    <string name="celular">Celular</string>
+    <string name="inserir_celular">Inserir número do celular</string>
+    <string name="feminino">Feminino</string>
+    <string name="masculino">Masculino</string>
+    <string name="ano_de">Ano de</string>
+    <string name="salvar">Salvar</string>
+    <string name="limpar">Limpar</string>
+
+    <string-array name="opTel">
+        <item>Comercial</item>
+        <item>Residencial</item>
+    </string-array>
+
+    <string-array name="opEscolaridade">
+        <item>Fundamental</item>
+        <item>Médio</item>
+        <item>Graduação</item>
+        <item>Especialização</item>
+        <item>Mestrado</item>
+        <item>Doutorado</item>
+    </string-array>
+
+
 </resources>
