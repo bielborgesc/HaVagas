@@ -4,7 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import br.edu.scl.ifsp.ads.pdm.havagas.databinding.ActivityMainBinding;
+
 public class MainActivity extends AppCompatActivity {
+
+    private ActivityMainBinding activityMainBinding;
+    private Candidato candidato;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

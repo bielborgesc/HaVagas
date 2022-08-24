@@ -12,6 +12,8 @@
     <string name="ano_de">Ano de</string>
     <string name="salvar">Salvar</string>
     <string name="limpar">Limpar</string>
+    <string name="data_de_nascimento">Data de Nascimento</string>
+    <string name="vaga_pretendida">Vaga pretendida</string>
 
     <string-array name="opTel">
         <item>Comercial</item>
