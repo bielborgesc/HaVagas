@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">HaVagas</string>
-    <string name="h_vagas">Há vagas</string>
+    <string name="h_vagas">Preencha com as suas informações</string>
     <string name="nome_completo">Nome Completo</string>
     <string name="email">Email</string>
     <string name="recebe_email">Deseja receber emails sobre atualizações e promoções</string>
@@ -14,6 +14,9 @@
     <string name="limpar">Limpar</string>
     <string name="data_de_nascimento">Data de Nascimento</string>
     <string name="vaga_pretendida">Vaga pretendida</string>
+    <string name="institui_o_de_ensino">Instituição de ensino</string>
+    <string name="titulo_de_monografio">Titulo de monografio</string>
+    <string name="orientador">Orientador</string>
 
     <string-array name="opTel">
         <item>Comercial</item>

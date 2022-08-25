@@ -9,15 +9,18 @@ public class Candidato {
     private String email;
     private Boolean recebeEmail;
     private String telefone;
-    private TipoTelefone tipoTelefone;
+    private String tipoTelefone;
     private String celular;
-    private Sexo  sexo;
-    private Date dataNascimento;
-    private Escolaridade escolaridade;
-    private Integer anoEscolaridade;
+    private String  sexo;
+    private String dataNascimento;
+    private String escolaridade;
+    private String anoEscolaridade;
+    private String instituicao;
+    private String tituloMonografio;
+    private String orientador;
     private String vagaPretendida;
 
-    public Candidato(String nome, String email, Boolean recebeEmail, String telefone, TipoTelefone tipoTelefone, String celular, Sexo sexo, Date dataNascimento, Escolaridade escolaridade, Integer anoEscolaridade, String vagaPretendida) {
+    public Candidato(String nome, String email, Boolean recebeEmail, String telefone, String tipoTelefone, String celular, String sexo, String escolaridade, String vagaPretendida) {
         this.nome = nome;
         this.email = email;
         this.recebeEmail = recebeEmail;
@@ -25,9 +28,7 @@ public class Candidato {
         this.tipoTelefone = tipoTelefone;
         this.celular = celular;
         this.sexo = sexo;
-        this.dataNascimento = dataNascimento;
         this.escolaridade = escolaridade;
-        this.anoEscolaridade = anoEscolaridade;
         this.vagaPretendida = vagaPretendida;
     }
 
@@ -63,11 +64,11 @@ public class Candidato {
         this.telefone = telefone;
     }
 
-    public TipoTelefone getTipoTelefone() {
+    public String getTipoTelefone() {
         return tipoTelefone;
     }
 
-    public void setTipoTelefone(TipoTelefone tipoTelefone) {
+    public void setTipoTelefone(String tipoTelefone) {
         this.tipoTelefone = tipoTelefone;
     }
 
@@ -79,35 +80,35 @@ public class Candidato {
         this.celular = celular;
     }
 
-    public Sexo getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(Sexo sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 
-    public Escolaridade getEscolaridade() {
+    public String getEscolaridade() {
         return escolaridade;
     }
 
-    public void setEscolaridade(Escolaridade escolaridade) {
+    public void setEscolaridade(String escolaridade) {
         this.escolaridade = escolaridade;
     }
 
-    public Integer getAnoEscolaridade() {
+    public String getAnoEscolaridade() {
         return anoEscolaridade;
     }
 
-    public void setAnoEscolaridade(Integer anoEscolaridade) {
+    public void setAnoEscolaridade(String anoEscolaridade) {
         this.anoEscolaridade = anoEscolaridade;
     }
 
@@ -119,10 +120,34 @@ public class Candidato {
         this.vagaPretendida = vagaPretendida;
     }
 
+    public String getInstituicao() {
+        return instituicao;
+    }
+
+    public void setInstituicao(String instituicao) {
+        this.instituicao = instituicao;
+    }
+
+    public String getTituloMonografio() {
+        return tituloMonografio;
+    }
+
+    public void setTituloMonografio(String tituloMonografio) {
+        this.tituloMonografio = tituloMonografio;
+    }
+
+    public String getOrientador() {
+        return orientador;
+    }
+
+    public void setOrientador(String orientador) {
+        this.orientador = orientador;
+    }
+
     @NonNull
     @Override
     public String toString() {
-        String sb = "Candidato{" + "nome='" + nome + '\'' +
+        return "Candidato{" + "nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
                 ", recebeEmail=" + recebeEmail +
                 ", telefone='" + telefone + '\'' +
@@ -133,7 +158,9 @@ public class Candidato {
                 ", escolaridade=" + escolaridade +
                 ", anoEscolaridade=" + anoEscolaridade +
                 ", vagaPretendida='" + vagaPretendida + '\'' +
+                ", instituicao='" + instituicao + '\'' +
+                ", tituloMonografio='" + tituloMonografio + '\'' +
+                ", orientador='" + orientador + '\'' +
                 '}';
-        return sb;
     }
 }
