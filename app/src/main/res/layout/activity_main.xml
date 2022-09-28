@@ -29,12 +29,12 @@
                 android:id="@+id/etNome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="@string/nome_completo"
-                android:padding="5dp"
                 android:layout_margin="5dp"
-                />
+                android:ems="10"
+                android:hint="@string/nome_completo"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:padding="5dp" />
 
             <EditText
                 android:id="@+id/etEmail"
