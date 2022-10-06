@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.app.DatePickerDialog.OnDateSetListener
 import android.widget.DatePicker
 import android.app.DatePickerDialog
+import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
@@ -12,6 +13,7 @@ import android.widget.AdapterView
 import br.edu.scl.ifsp.ads.pdm.havagas.databinding.ActivityMainBinding
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
@@ -134,60 +136,59 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+            amb.spEscolaridade.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        when (position) {
+                            0, 1 -> {
+                                amb.etAno.hint = "Ano de Formatura"
+                                amb.etAno.visibility = View.VISIBLE
+                                amb.etInstituicao.visibility = View.GONE
+                                amb.etMonografia.visibility = View.GONE
+                                amb.etOrientador.visibility = View.GONE
+                            }
+                            2, 3 -> {
+                                amb.etAno.hint = "Ano de Conclusão"
+                                amb.etAno.visibility = View.VISIBLE
+                                amb.etInstituicao.visibility = View.VISIBLE
+                                amb.etMonografia.visibility = View.GONE
+                                amb.etOrientador.visibility = View.GONE
+                            }
+                            4, 5 -> {
+                                amb.etAno.hint = "Ano de Conclusão"
+                                amb.etAno.visibility = View.VISIBLE
+                                amb.etInstituicao.visibility = View.VISIBLE
+                                amb.etMonografia.visibility = View.VISIBLE
+                                amb.etOrientador.visibility = View.VISIBLE
+                            }
 
-//        Erro nessa função
-        amb.spEscolaridade.onItemSelectedListener =
-            object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    adapterView: AdapterView<*>?,
-                    view: View,
-                    i: Int,
-                    l: Long
-                ) {
-                    when (i) {
-                        0, 1 -> {
-                            amb.etAno.hint = "Ano de Formatura"
-                            amb.etAno.visibility = View.VISIBLE
-                            amb.etInstituicao.visibility = View.GONE
-                            amb.etMonografia.visibility = View.GONE
-                            amb.etOrientador.visibility = View.GONE
-                        }
-                        2, 3 -> {
-                            amb.etAno.hint = "Ano de Conclusão"
-                            amb.etAno.visibility = View.VISIBLE
-                            amb.etInstituicao.visibility = View.VISIBLE
-                            amb.etMonografia.visibility = View.GONE
-                            amb.etOrientador.visibility = View.GONE
-                        }
-                        4, 5 -> {
-                            amb.etAno.hint = "Ano de Conclusão"
-                            amb.etAno.visibility = View.VISIBLE
-                            amb.etInstituicao.visibility = View.VISIBLE
-                            amb.etMonografia.visibility = View.VISIBLE
-                            amb.etOrientador.visibility = View.VISIBLE
                         }
                     }
+
+                    override fun onNothingSelected(adapterView: AdapterView<*>?) {
+                        amb.etAno.hint = "Ano de"
+                        amb.etAno.visibility = View.GONE
+                        amb.etInstituicao.visibility = View.GONE
+                        amb.etMonografia.visibility = View.GONE
+                        amb.etOrientador.visibility = View.GONE
+                    }
                 }
+        }
 
-                override fun onNothingSelected(adapterView: AdapterView<*>?) {
-                    amb.etAno.hint = "Ano de"
-                    amb.etAno.visibility = View.GONE
-                    amb.etInstituicao.visibility = View.GONE
-                    amb.etMonografia.visibility = View.GONE
-                    amb.etOrientador.visibility = View.GONE
-                }
-            }
-    }
+                private fun updateLabel() {
+            val myFormat = "dd/MM/yy"
+            val dateFormat = SimpleDateFormat(myFormat, Locale.US)
+            amb.etDtNasc.setText(dateFormat.format(calendar.time))
+        }
 
-    private fun updateLabel() {
-        val myFormat = "dd/MM/yy"
-        val dateFormat = SimpleDateFormat(myFormat, Locale.US)
-        amb.etDtNasc.setText(dateFormat.format(calendar.time))
-    }
-
-    private fun updateLabelAno() {
-        val myFormat = "dd/MM/yy"
-        val dateFormat = SimpleDateFormat(myFormat, Locale.US)
-        amb.etAno.setText(dateFormat.format(calendar.time))
-    }
+                private fun updateLabelAno() {
+            val myFormat = "dd/MM/yy"
+            val dateFormat = SimpleDateFormat(myFormat, Locale.US)
+            amb.etAno.setText(dateFormat.format(calendar.time))
+        }
 }
